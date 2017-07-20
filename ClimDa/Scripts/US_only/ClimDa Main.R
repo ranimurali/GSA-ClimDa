@@ -1,4 +1,4 @@
-## CLIMDA MODULE
+## CLIMDA MODULE - here is a test
 #
 # - user specifies data input, parameters, precip variables, output
 #
