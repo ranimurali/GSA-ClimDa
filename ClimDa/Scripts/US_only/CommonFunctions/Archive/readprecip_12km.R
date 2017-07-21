@@ -1,18 +1,14 @@
 #  Open file and read precipitation data for time periods
 #print("tag")
 #print(tag)
-
-modeldates<-read.csv("H:\\ClimDa\\Scripts\\US_only\\CommonFunctions\\File_names.csv",header=FALSE)
-#modeldates[1,]
-#pr_yr_s<-as.vector(modeldates[1,])
-
+#
 if (Modell[i] == "bcc-csm1-1") {
- num_file_pr=94 #aml edit from 4 
- pr_yr_s<-as.vector(modeldates[1,])
- pr_yr_f<-as.vector(modeldates[2,])
- num_file_bs=94 #aml edit from 6
- bs_yr_s<-c("19500101","19600101","19700101","19980101","19990101","20000101") #changed here aml 7-20
- bs_yr_f<-c("19591231","19691231","19791231","19981231","19991231","20001231")}
+ num_file_pr=4
+ pr_yr_s<-c("20060101","20160101","20260101","20360101")
+ pr_yr_f<-c("20061231","20251231","20351231","20451231")
+ num_file_bs=6
+ bs_yr_s<-c("19500101","19600101","19700101","19800101","19900101","20000101")
+ bs_yr_f<-c("19591231","19691231","19791231","19891231","19991231","20051231")}
 
 if (Modell[i] == "ccsm4") {
  num_file_pr=6

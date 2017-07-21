@@ -1,4 +1,4 @@
-## CLIMDA MODULE
+## CLIMDA MODULE - here is a test
 #
 # - user specifies data input, parameters, precip variables, output
 #
@@ -16,7 +16,7 @@
 # setwd('C:\\Users\\Rawlings\\Desktop\\PORTABLE\\ClimDA\\Scripts\\US_only')
 
 #ClimDAloc<-c('F:\\ClimDA')
-ClimDAloc<-c('H:\\ClimDa')
+ClimDAloc<-c('F:\\ClimDa')
 workdirUS<-c(paste(sep="",ClimDAloc,'\\Scripts\\US_only'))
 setwd(workdirUS)
 
@@ -61,7 +61,7 @@ GIS_output = 0   # create obs/proj csv file for GIS insert (value by model/ens g
 #-----PROJECTION INFO
 # projected time period year to year
 Proj_yr_s=2006
-Proj_yr_f=2016
+Proj_yr_f=2006
 # number of climate models
 model_num= 1    # insert number of climate models
 # number of scenarios
