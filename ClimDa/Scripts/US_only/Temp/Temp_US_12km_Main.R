@@ -3,7 +3,8 @@
 # April, 2016 (First version)
 #-----------------------------------
 
-setwd(c(paste(sep="",workdirUS,"\\Temp\\Functions")))
+#setwd(c(paste(sep="",workdirUS,"\\Temp\\Functions")))
+tempworkdirUS<-c(paste(sep="",workdirUS,"/Temp/Functions"))
 
 # to run just this script:
 #source("Temp_US_12km_Main.R")

@@ -15,10 +15,9 @@
 # directory of U.S. ClimDA tool - change this to the correct drive/etc.
 # setwd('C:\\Users\\Rawlings\\Desktop\\PORTABLE\\ClimDA\\Scripts\\US_only')
 
-#ClimDAloc<-c('F:\\ClimDA')
-ClimDAloc<-c('H:\\ClimDa')
-workdirUS<-c(paste(sep="",ClimDAloc,'\\Scripts\\US_only'))
-setwd(workdirUS)
+ClimDAloc<-c("ClimDa")
+workdirUS<-c(paste(sep="",ClimDAloc,"/Scripts/US_only"))
+#setwd(workdirUS)
 
 #------ TO RUN THIS PROGRAM, cut/paste the three lines above & line below into the R console - the first being the workdir US folder & second calls/runs the program
 #source("ClimDA_Main.R")
@@ -53,7 +52,7 @@ J_obs = 0  # 1 for "yes"
 Base_yr_s=1990
 Base_yr_f=1999
 # output format - You can add new output folder after "\\Output\\FOLDER NAME HERE" below 
-output_dir<-c(paste(sep="",ClimDAloc,"\\Output\\Test"))
+output_dir<-c(paste(sep="",ClimDAloc,"/Output/Test"))
 figure_pdf = 1   # plot figures into a pdf
 table_csv = 1    # plot tables into a csv file that can be imported into Excel and formatted - defaults to table_csv=1 if figure_pdf=1
 GIS_output = 0   # create obs/proj csv file for GIS insert (value by model/ens grid cell by grid cell)
@@ -133,14 +132,14 @@ Thres_val<-c(70)
 #---- Precip analysis
 
 if (Module_ch == "Precip") {
-workdirPrecip<-c(paste(sep="",workdirUS,"\\Precip\\"))
-if (inp==1) {source(c(paste(sep="",workdirPrecip,"Precip_US_1degree_Main_v5.R")))}  
-if (inp==2) {source(c(paste(sep="",workdirPrecip,"Precip_US_12km_Main.r")))}
+workdirPrecip<-c(paste(sep="",workdirUS,"/Precip/"))
+#if (inp==1) {source(c(paste(sep="",workdirPrecip,"Precip_US_1degree_Main_v5.R")))}  
+#if (inp==2) {source(c(paste(sep="",workdirPrecip,"Precip_US_12km_Main.r")))}
 if (inp==3) {source(c(paste(sep="",workdirPrecip,"Precip_US_12km_Main.r")))}
 
 if ((figure_pdf==1) & (table_csv==1)) {
-  source(c(paste(sep="",workdirUS,"\\Precip\\Output\\US_Region_Make_PDF_v2.R")))
-  source(c(paste(sep="",workdirUS,"\\Precip\\Output\\US_Region_Make_Precip_GIS.R")))}
+  source(c(paste(sep="",workdirUS,"/Precip/Output/US_Region_Make_PDF_v2.R")))
+  source(c(paste(sep="",workdirUS,"/Precip/Output/US_Region_Make_Precip_GIS.R")))}
 }  # end Precip analysis
 
 #if (GIS_output ==1 ) {
@@ -149,23 +148,23 @@ if ((figure_pdf==1) & (table_csv==1)) {
 #---- Temp analysis
 if (Module_ch == "Temp") {
 #if (inp==1) {source("F:\\ClimDA\\Scripts\\US_only\\Temp\\Temp_US_12km_1deg_Main.r")}  
-workdirTemp<-c(paste(sep="",workdirUS,"\\Temp\\"))
-if (inp==1) {source(c(paste(sep="",workdirTemp,"Temp_US_1deg_Main.R")))}  
+workdirTemp<-c(paste(sep="",workdirUS,"/Temp/"))
+#if (inp==1) {source(c(paste(sep="",workdirTemp,"Temp_US_1deg_Main.R")))}  
 if (inp > 1) {source(c(paste(sep="",workdirTemp,"Temp_US_12km_Main.r")))}
 #if (inp==3) {source(c(paste(sep="",workdirTemp,"Temp_US_12km_Main.r")))}
 
 #if ((figure_pdf==1) & (table_csv==1) & (usergrid !=1) ) {
 # ASSUMING ALWAYS GIVE TABLE IF GIVING FIGURES (table takes no time to produce)
 if ((table_csv==1) & (usergrid !=1) ) {
- source(c(paste(sep="",workdirTemp,"Output\\US_Region_Make_Temp_PDF.R")))
- source(c(paste(sep="",workdirTemp,"Output\\US_Region_Make_Temp_GIS.R")))}
+ source(c(paste(sep="",workdirTemp,"Output/US_Region_Make_Temp_PDF.R")))
+ source(c(paste(sep="",workdirTemp,"Output/US_Region_Make_Temp_GIS.R")))}
 
 if ((figure_pdf==1) & (table_csv==1) & (usergrid ==1) ) {
- source(c(paste(sep="",workdirTemp,"Output\\US_Region_Make_Temp_PDF_User_defined.R")))
- source(c(paste(sep="",workdirTemp,"Output\\US_Region_Make_Temp_GIS.R")))}
+ source(c(paste(sep="",workdirTemp,"Output/US_Region_Make_Temp_PDF_User_defined.R")))
+ source(c(paste(sep="",workdirTemp,"Output/US_Region_Make_Temp_GIS.R")))}
 
 if (GIS_output ==1 ) {
-  source(c(paste(sep="",workdirTemp,"Output\\US_Region_Make_Temp_GIS.R"))) }
+  source(c(paste(sep="",workdirTemp,"Output/US_Region_Make_Temp_GIS.R"))) }
 }  # end temp analysis
 
 #proc.time() - ptm
